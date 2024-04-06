@@ -51,10 +51,6 @@ Contributions are welcome! Please feel free to submit any bug fixes or enhanceme
 4. Push to the branch: `git push origin feature/your-feature`
 5. Submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - [PyPDF2](https://github.com/mstamy2/PyPDF2)
