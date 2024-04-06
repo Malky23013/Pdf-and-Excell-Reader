@@ -1,20 +1,15 @@
 from PyPDF2 import PdfReader
 import pandas as pd
 from openai import OpenAI
-# הגדרת מפתח ה-API
 api_key = "secret"
-
-# יצירת client עם ה-API key
 client = OpenAI(api_key=api_key)
 
 
 def extract_text_from_pdf(file_path):
-    # קריאת קובץ PDF
     with open(file_path, 'rb') as file:
         pdf_reader = PdfReader(file)
-        num_pages = len(pdf_reader.pages)  # מספר העמודים במסמך
+        num_pages = len(pdf_reader.pages)  
 
-        # קריאת כל העמודים ואיחודם לטקסט אחד
         text = ''
         for page_num in range(num_pages):
             page = pdf_reader.pages[page_num]
@@ -23,10 +18,8 @@ def extract_text_from_pdf(file_path):
         return text
 def extract_text_from_excel(file_path):
     try:
-        # קריאת קובץ Excel
         excel_data = pd.read_excel(file_path)
 
-        # המרת הנתונים לטקסט
         text = ''
         for column in excel_data.columns:
             for row in excel_data[column]:
